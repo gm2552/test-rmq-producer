@@ -1,0 +1,12 @@
+server.port: 8081
+
+spring: 
+  cloud: 
+    stream:
+      poller:
+        fixed-delay: 3000
+      function:
+        definition: createHelloString
+      bindings: 
+        createHelloString-out-0: 
+          destination: hello-strings
